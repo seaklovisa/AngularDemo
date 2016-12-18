@@ -1,5 +1,0 @@
-D:\GitHub\AngularDemo\WebserivcesPoint\bin\WebserivcesPoint.dll.config
-D:\GitHub\AngularDemo\WebserivcesPoint\bin\WebserivcesPoint.dll
-D:\GitHub\AngularDemo\WebserivcesPoint\bin\WebserivcesPoint.pdb
-D:\GitHub\AngularDemo\WebserivcesPoint\obj\Debug\WebserivcesPoint.dll
-D:\GitHub\AngularDemo\WebserivcesPoint\obj\Debug\WebserivcesPoint.pdb
