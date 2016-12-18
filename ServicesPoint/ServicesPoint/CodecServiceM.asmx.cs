@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CodecHelper;
+using CodecHelper.Base32Codec;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Services;
 
@@ -17,8 +20,32 @@ namespace ServicesPoint {
     public class CodecServiceM : System.Web.Services.WebService {
 
         [WebMethod]
-        public static string HelloWorld() {
-            return "Hello World";
+        public void Base32Encryptor(string input) {
+            string callback = HttpContext.Current.Request["callback"];
+
+            byte[] byteInput = Encoding.ASCII.GetBytes(input);
+            IEncryptor encrytor = new Base32Encryptor();
+            byte[] byteResult = encrytor.Encrypt(byteInput);
+            string strResult = Base32Object.GetEncodeStrResult(byteResult);
+
+            string response = "{\"result\":\"" + strResult + "\"}";
+            string call = callback + "(" + response + ")";
+            HttpContext.Current.Response.Write(call);
+            HttpContext.Current.Response.End();
+        }
+
+        [WebMethod]
+        public void Base32Decryptor(string input) {
+            string callback = HttpContext.Current.Request["callback"];
+
+            IDecryptor decryptor = new Base32Decryptor();
+            byte[] byteResult = decryptor.Decrypt(input);
+            string strResult = Base32Object.GetDecodeStrResult(byteResult);
+
+            string response = "{\"result\":\"" + strResult + "\"}";
+            string call = callback + "(" + response + ")";
+            HttpContext.Current.Response.Write(call);
+            HttpContext.Current.Response.End();
         }
     }
 }
