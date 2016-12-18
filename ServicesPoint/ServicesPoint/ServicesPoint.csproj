@@ -42,8 +42,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodecHelper">
-      <HintPath>..\..\..\CodecHelper\CodecHelper\bin\Debug\CodecHelper.dll</HintPath>
+    <Reference Include="CodecHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CodecHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
