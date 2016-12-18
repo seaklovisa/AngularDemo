@@ -17,7 +17,7 @@ namespace ServicesPoint {
     public class CodecServiceM : System.Web.Services.WebService {
 
         [WebMethod]
-        public string HelloWorld() {
+        public static string HelloWorld() {
             return "Hello World";
         }
     }
